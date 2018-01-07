@@ -84,8 +84,11 @@ loss,accuracy = classifier.evaluate(X_test,y_test)
 y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
 
+# Confusion Matrix en fazla 2 sınıfın olduğu veriler için kullanılır.
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test,y_pred)
+
+# Elle girilen veri için verilecek çıktı test edilir.
 # France,Credit_Score,Gender:Male,Age,Tenure,Balance,Number of Product,Has Credit Card, Is Active Member, Estimated Salary
 myTest_data = np.array([[0,0,600,1,40,3,60000,2,1,1,50000]])
 myTest_data = sc.transform(myTest_data)
